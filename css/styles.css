@@ -1,0 +1,444 @@
+/* Dark Gradient Background */
+body {
+    background: linear-gradient(180deg, #63778a 0%, #2d3e50 100%);
+    background-attachment: fixed;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Smooth Transitions */
+* {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Info Icon Circle */
+.info-icon {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin: 0 auto 1.5rem;
+}
+
+/* Large Pill Buttons */
+.pill-button {
+    padding: 1.25rem 2rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    font-weight: 300;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pill-button:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pill-button.active {
+    background: white;
+    color: #00365a;
+    border-color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Slider Styling */
+.custom-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+/* Slider Container & Floating Tooltip */
+.slider-container {
+    position: relative;
+    padding: 3rem 0 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.slider-tooltip {
+    position: absolute;
+    top: 0;
+    /* left will be set dynamically via JS */
+    transform: translateX(-50%);
+    background: white;
+    color: #00365a;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: left 0.1s linear;
+}
+
+.slider-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-top-color: white;
+}
+
+/* Number Selector */
+.number-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.number-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.number-circle:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.number-circle.active {
+    background: white;
+    color: #00365a;
+    border-color: white;
+    transform: scale(1.2);
+}
+
+/* Radio Button Styling */
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom-radio.checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+}
+
+/* Fade Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+/* Mobile Phone Icon Illustration */
+.phone-illustration {
+    width: 120px;
+    height: 160px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Progress Dots */
+.progress-dots {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.progress-line {
+    width: 120px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Step Indicator Bar */
+.step-indicator-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0 3rem;
+    z-index: 100;
+}
+
+.step-indicator-container.active {
+    display: block;
+}
+
+.step-indicator-title {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.step-indicator-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin-bottom: 4rem;
+    line-height: 1.5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 1rem 0;
+}
+
+/* Connecting Line Segment */
+.step-line {
+    flex-grow: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 0.25rem;
+    min-width: 20px;
+    /* Minimum width for the line */
+}
+
+.step-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 300;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.step-arrow {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+.step-item {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    /* Remove margin as line takes space */
+}
+
+.step-item:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.step-item.active {
+    background: white;
+    color: #00365a;
+    border-color: white;
+    font-weight: 600;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tooltip Styling */
+.step-tooltip {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #00365a;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    text-align: center;
+    min-width: 180px;
+}
+
+.step-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: white;
+}
+
+.step-item.active .step-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: 135%;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .step-indicator {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .step-indicator::before {
+        display: none;
+        /* Hide line on mobile usually or adjust */
+    }
+
+    .step-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .step-arrow,
+    .step-label.left,
+    .step-label.right {
+        display: none;
+        /* Simplify on mobile */
+    }
+
+    .step-item {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Enhanced Progress Counter */
+#progress-counter {
+    background: rgba(0, 54, 90, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#progress-counter #current-step {
+    color: white;
+    font-weight: 600;
+}
+
+#progress-counter #total-steps {
+    color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flossbach von Storch ONE</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full p-6 z-50">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 border-2 border-white rounded-full"></div>
+            <div class="font-light text-white tracking-wider text-sm">
+                Flossbach von Storch <span class="font-semibold">ONE</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div id="app-container" class="min-h-screen flex items-center justify-center relative">
+        <!-- Landing Page (Initial) -->
+        <div id="landing-page" class="w-full max-w-5xl px-4 py-16 text-center">
+            <!-- Content will be injected by JavaScript -->
+        </div>
+
+        <!-- Question Container (Hidden Initially) -->
+        <div id="question-container" class="w-full max-w-4xl px-4 hidden">
+            <!-- Questions will be injected by JavaScript -->
+        </div>
+
+        <!-- Success Screen (Hidden Initially) -->
+        <div id="success-screen" class="w-full max-w-2xl px-4 text-center hidden">
+            <!-- Success message will be injected by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Navigation Chevrons -->
+    <button id="chevron-up"
+        class="fixed top-20 left-1/2 -translate-x-1/2 w-12 h-12 text-white/60 hover:text-white transition-all z-50 hidden">
+        <i class="fas fa-chevron-up text-2xl"></i>
+    </button>
+
+    <button id="chevron-down"
+        class="fixed bottom-20 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-white/20 border-2 border-white/50 text-white flex items-center justify-center transition-all z-40 hidden hover:bg-white/30">
+        <i class="fas fa-chevron-down text-xl"></i>
+    </button>
+
+    <!-- Progress Counter -->
+    <div id="progress-counter" class="fixed top-6 left-6 text-white/50 text-sm bg-white/10 px-3 py-1 rounded hidden">
+        <span id="current-step">1</span> / <span id="total-steps">14</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 w-full p-6 z-40 flex justify-between items-center text-white/50 text-xs">
+        <div>© 2025 Flossbach von Storch</div>
+        <div class="flex gap-4">
+            <a href="#" class="hover:text-white transition-colors">FAQ</a>
+            <a href="#" class="hover:text-white transition-colors">Impressum</a>
+            <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+            <a href="#" class="hover:text-white transition-colors">Rechtliche Hinweise</a>
+        </div>
+    </footer>
+
+    <!-- Contact Button (Bottom Right) -->
+    <button
+        class="fixed bottom-6 right-6 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center z-50 hover:scale-110 transition-transform">
+        <i class="fas fa-phone text-[#00365a] text-xl"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
