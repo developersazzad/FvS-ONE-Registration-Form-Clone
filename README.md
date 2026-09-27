@@ -205,7 +205,7 @@ Design, branding and trademarks of *Flossbach von Storch ONE* remain the propert
 | **Role** | Full-Stack Web Developer — 7 years, 250+ projects |
 | **Team** | wedevspro |
 | **GitHub** | [`developersazzad`](https://github.com/developersazzad) |
-| **Portfolio** | [ai.khatifoodbazar.com/wa/portfolio](https://ai.khatifoodbazar.com/wa/portfolio/) |
+| **Portfolio** | [sazzad.wedevspro.com](https://sazzad.wedevspro.com/) |
 | **Email** | `[developer.sazzad.me@gmail.com]` _← add korar age ei line ta edit koro_ |
 | **LinkedIn** | `[https://www.linkedin.com/in/developer-sazzad/]` _← add korte chaile_ |
 | **Location** | Chattogram, Bangladesh 🇧🇩 |
